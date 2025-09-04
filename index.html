@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Não Incidência de ITBI - Prefeitura de Porto Velho</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .header h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .header .title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .intro-text {
+            background: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 25px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        .form-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .form-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-col.col-2 {
+            flex: 2;
+        }
+
+        .form-col.col-3 {
+            flex: 3;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        select option {
+            white-space: normal;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .docs-section {
+            background: #fff9e6;
+            border: 2px solid #f39c12;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .docs-section.active {
+            display: block;
+        }
+
+        .docs-section h4 {
+            color: #d68910;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .docs-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .docs-list li {
+            background: white;
+            margin: 8px 0;
+            padding: 10px;
+            border-left: 4px solid #f39c12;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .docs-list li:before {
+            content: "📄 ";
+            margin-right: 8px;
+        }
+
+        .date-inputs {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .date-inputs input {
+            width: 60px;
+            text-align: center;
+        }
+
+        .date-inputs span {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .signature-section {
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+
+        .signature-box {
+            border: 2px dashed #ddd;
+            min-height: 80px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 0;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .date-inputs {
+                justify-content: center;
+            }
+
+            select {
+                font-size: 14px;
+            }
+
+            option {
+                white-space: normal;
+                word-break: break-word;
+            }
+        }
+
+        .info-box {
+            background: #e8f6ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #0066cc;
+        }
+
+        .info-box .icon {
+            display: inline-block;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .radio-group {
+            margin-bottom: 15px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PREFEITURA DO MUNICÍPIO DE PORTO VELHO</h1>
+            <h2>SECRETARIA EXECUTIVA DA RECEITA MUNICIPAL</h2>
+            <div class="title">REQUERIMENTO PARA NÃO INCIDÊNCIA DE ITBI</div>
+        </div>
+
+        <div class="content">
+            <div class="intro-text">
+                <strong>Ilmo. Sr. (a) Secretário (a) da Receita Municipal, trata-se de:</strong>
+            </div>
+
+            <form id="itbiForm">
+                <!-- Seleção do Tipo de Requerimento -->
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="tipoRequerimento">Tipo de Requerimento <span class="required">*</span></label>
+                        <select id="tipoRequerimento" name="tipoRequerimento" required onchange="showDocumentation()">
+                            <option value="">Selecione o tipo de requerimento</option>
+                            <option value="extincao_pj">Quando Decorrente da Extinção de Pessoa Jurídica</option>
+                            <option value="incorporacao_fusao_estrangeira">Quando Decorrente da Incorporação, Fusão, Cisão ou Extinção de Pessoa Jurídica Estrangeira</option>
+                            <option value="desincorporacao_patrimonio">Quando Efetuada para sua Desincorporação do Patrimônio de Pessoa Jurídica a que Foram Conferidos</option>
+                            <option value="incorporacao_fusao_nacional">Quando Decorrente da Incorporação, Fusão, Cisão ou Extinção de Pessoa Jurídica Nacional</option>
+                            <option value="incorporacao_capital">Quando Efetuada para sua Incorporação ao Patrimônio de Pessoa Jurídica em Pagamento de Capital Subscrito</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Documentação Necessária -->
+                <div id="documentacao" class="docs-section">
+                    <h4>📋 Documentação Necessária</h4>
+                    <div class="info-box">
+                        <span class="icon">ℹ️</span>
+                        <strong>Importante:</strong> A documentação necessária, assim como este requerimento, deve estar em PDF legível para a abertura do processo pelo DTEL. Caso o DTEL esteja indisponível, envie para: protocolo.semfaz@portovelho.ro.gov.br
+                    </div>
+                    <ul id="docsList" class="docs-list">
+                        <!-- A lista de documentos será preenchida via JavaScript -->
+                    </ul>
+                </div>
+
+                <!-- Identificação do Requerente -->
+                <div class="form-section">
+                    <h3>1. Identificação do Sujeito Passivo/Requerente</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-col col-3">
+                            <label for="nome">Nome/Razão Social <span class="required">*</span></label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite o nome completo ou razão social" required>
+                        </div>
+                        <div class="form-col">
+                            <label for="cpfCnpj">CPF/CNPJ <span class="required">*</span></label>
+                            <input type="text" id="cpfCnpj" name="cpfCnpj" placeholder="000.000.000-00 ou 00.000.000/0000-00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="telefone">Telefone/Celular <span class="required">*</span></label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                        </div>
+                        <div class="form-col col-2">
+                            <label for="email">E-mail <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endereco">Endereço de Correspondência <span class="required">*</span></label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Digite o logradouro (rua, av., etc.)" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="numero">Nº <span class="required">*</span></label>
+                            <input type="text" id="numero" name="numero" placeholder="Número" required>
+                        </div>
+                        <div class="form-col col-2">
+                            <label for="bairro">Bairro <span class="required">*</span></label>
+                            <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="cep">CEP <span class="required">*</span></label>
+                            <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+                        </div>
+                        <div class="form-col col-2">
+                            <label for="complemento">Complemento</label>
+                            <input type="text" id="complemento" name="complemento" placeholder="Apartamento, bloco, etc.">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção: 2. Identificação do Imóvel -->
+                <div class="form-section">
+                    <h3>2. Identificação do Imóvel</h3>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" id="urbano" name="tipo_imovel" value="Urbano" required>
+                            Imóvel Urbano
+                        </label>
+                        <label>
+                            <input type="radio" id="rural" name="tipo_imovel" value="Rural" required>
+                            Imóvel Rural
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="inscricao">Inscrição do Imóvel <span class="required">*</span></label>
+                        <input type="text" id="inscricao" name="inscricao" placeholder="nnnnnnnnnnnnnn" required>
+                    </div>
+                </div>
+
+                <!-- Informações Adicionais (seção 3) -->
+                <div class="form-section">
+                    <h3>3. Informações Adicionais</h3>
+                    <div class="form-group">
+                        <label for="informacoes">Descreva informações relevantes para a análise do pedido: <span class="required">*</span></label>
+                        <textarea id="informacoes" name="informacoes" placeholder="Digite aqui informações adicionais que possam auxiliar na análise do seu requerimento..." required></textarea>
+                    </div>
+                </div>
+
+                <!-- Data e Assinatura -->
+                <div class="signature-section">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label>Data do Requerimento:</label>
+                            <div class="date-inputs">
+                                <input type="text" id="dataCompleta" name="dataCompleta" readonly style="background-color: #f8f9fa; border: 2px solid #e9ecef; font-weight: 600; width: auto;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="nomeAssinatura">Nome do Contribuinte ou Representante Legal <span class="required">*</span></label>
+                            <input type="text" id="nomeAssinatura" name="nomeAssinatura" placeholder="Nome completo" required>
+                        </div>
+                        <div class="form-col">
+                            <label for="cpfAssinatura">CPF <span class="required">*</span></label>
+                            <input type="text" id="cpfAssinatura" name="cpfAssinatura" placeholder="000.000.000-00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Espaço para Assinatura Digital 
+                            <a href="https://sso.acesso.gov.br/login?client_id=assinador.iti.br&authorization_id=198ae3a23c3" target="_blank" style="color: #3498db; text-decoration: none;">🔗</a>
+                        </label>
+                        <div class="signature-box">
+                            Coloque aqui sua assinatura digital do Gov.br ou do seu Token
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões -->
+                <div class="buttons">
+                    <button type="button" class="btn btn-secondary" onclick="limparFormulario()">Limpar Formulário</button>
+                    <button type="button" class="btn btn-primary" onclick="gerarPDF()">Gerar PDF</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Dicionário com a documentação necessária para cada tipo de requerimento
+        const documentacaoPorTipo = {
+            'extincao_pj': [
+                'Requerimento específico, assinado pelo representante legal com e-mail/telefone, obrigatório',
+                'Procuração e documentos de identificação do representante, quando aplicável',
+                'CNPJ e comprovante de inscrição e situação cadastral da(s) pessoa(s) jurídica(s) envolvida(s)',
+                'Contrato/Estatuto Social consolidado e últimas alterações arquivadas na Junta Comercial/Cartório (todas as partes envolvidas)',
+                'Certidão de inteiro teor da matrícula atualizada do imóvel, com ônus e ações do Cartório de Registro de Imóveis',
+                'Certidão negativa de tributos imobiliários, no caso de imóvel urbano',
+                'Declaração do ITR, no caso de imóvel rural',
+                'Laudo de avaliação do imóvel, emitido por profissional habilitado',
+                'Balanço patrimonial que demonstre o imóvel já incorporado, ainda que parcial',
+                'Livro Diário, ou os Balancetes Diários, e o Livro Razão (se houver), que demonstre o lançamento específico da incorporação',
+                'Distrato social/ata de liquidação, com relação dos bens partilhados e critérios de avaliação e prova de arquivamento/registro do encerramento na Junta/Cartório',
+                'Nomeação do liquidante e relatórios de liquidação (se houver)',
+                'Balanços e DRE, ECD/ECF/DEFIS, razão analítica ou relatório gerencial que separe receitas imobiliárias (compra e venda de imóveis, locação, arrendamento mercantil) das demais (De 2 anos anteriores e 2 anos posteriores à aquisição)',
+                'Quando se tratar de PJ que iniciar suas atividades após a aquisição do imóvel, ou menos de 2 anos antes dela, trazer documentos contábeis dos três primeiros anos',
+                'Termo de compromisso de apresentar, demonstrações dos 2 exercícios subsequentes ao fato gerador para aferição da preponderância',
+                'Tarifa de abertura de processo'
+            ],
+            'incorporacao_fusao_estrangeira': [
+                'Requerimento específico devidamente preenchido',
+                'Atos Constitutivos, contrato ou estatuto e última alteração, registrados no órgão competente ou lei quando se tratar de órgão público',
+                'CNPJ',
+                'RG e CPF do subscritor do requerimento, com poderes de representação da sociedade, conforme atos constitutivos, ou portaria, ou decreto, quando se tratar de órgão público',
+                'Certidão de incorporação, fusão, cisão, registrada na junta ou no cartório, conforme o caso, descrevendo a sucessão patrimonial decorrente da operação',
+                'Protocolo e ata de assembleia geral de aprovação e autorização de operação e nomeação de 03 peritos ou empresa especializada para avaliação de patrimônios líquidos',
+                'Declaração de Informações Econômico-Fiscais de PJ – DIPJ e Declaração de Débitos e Créditos de Tributos Federais – DCTF e Declaração de IR fonte – DIRF',
+                'Certidão Simplificada da JUCER, registrada em cartório',
+                'Certidão de Propriedade das matrículas cujos imóveis ou direitos reais sejam transmitidos, lavrada pelo registro de imobiliário competente',
+                'Certidão Negativa Federal, Estadual e Municipal',
+                'Procuração do Representante no Brasil, com poderes expressos para receber citação em ações propostas contra a outorgante, notificações e avisos de lançamento de tributos e multas e intimações, do local onde situados os bens transmitidos, em português ou traduzido por tradutor oficial',
+                'Inteiro Teor do contrato ou estatuto e prova de achar-se a organização constituída conforme a lei de seu país, em português ou traduzido por tradutor oficial',
+                'Alterações contratuais pertinentes à transação, nas quais figurem os registros das operações junto ao registro civil ou comercial, conforme o caso',
+                'Tarifa de abertura de processo'
+            ],
+            'desincorporacao_patrimonio': [
+                'Requerimento específico, assinado pelo representante legal com e-mail/telefone, obrigatório',
+                'Procuração e documentos de identificação do representante, quando aplicável',
+                'CNPJ e comprovante de inscrição e situação cadastral da(s) pessoa(s) jurídica(s) envolvida(s)',
+                'Contrato/Estatuto Social consolidado e últimas alterações arquivadas na Junta Comercial/Cartório (todas as partes envolvidas)',
+                'Certidão de inteiro teor da matrícula atualizada do imóvel, com ônus e ações do Cartório de Registro de Imóveis',
+                'Certidão negativa de tributos imobiliários, no caso de imóvel urbano',
+                'Declaração do ITR, no caso de imóvel rural',
+                'Laudo de avaliação do imóvel, emitido por profissional habilitado',
+                'Balanço patrimonial que demonstre o imóvel já incorporado, ainda que parcial',
+                'Livro Diário, ou os Balancetes Diários, e o Livro Razão (se houver), que demonstre o lançamento específico da incorporação',
+                'Protocolo e justificação de desincorporação, atas de aprovação nas sociedades envolvidas e comprovação de arquivamento',
+                'Balanços e DRE, ECD/ECF/DEFIS, razão analítica ou relatório gerencial que separe receitas imobiliárias (compra e venda de imóveis, locação, arrendamento mercantil) das demais (De 2 anos anteriores e 2 anos posteriores à aquisição)',
+                'Quando se tratar de PJ que iniciar suas atividades após a aquisição do imóvel, ou menos de 2 anos antes dela, trazer documentos contábeis dos três primeiros anos',
+                'Termo de compromisso de apresentar, demonstrações dos 2 exercícios subsequentes ao fato gerador para aferição da preponderância',
+                'Tarifa de abertura de processo'
+            ],
+            'incorporacao_fusao_nacional': [
+                'Requerimento específico, assinado pelo representante legal com e-mail/telefone, obrigatório',
+                'Procuração e documentos de identificação do representante, quando aplicável',
+                'CNPJ e comprovante de inscrição e situação cadastral da(s) pessoa(s) jurídica(s) envolvida(s)',
+                'Contrato/Estatuto Social consolidado e últimas alterações arquivadas na Junta Comercial/Cartório (todas as partes envolvidas)',
+                'Certidão de inteiro teor da matrícula atualizada do imóvel, com ônus e ações do Cartório de Registro de Imóveis',
+                'Certidão negativa de tributos imobiliários, no caso de imóvel urbano',
+                'Declaração do ITR, no caso de imóvel rural',
+                'Laudo de avaliação do imóvel, emitido por profissional habilitado',
+                'Balanço patrimonial que demonstre o imóvel já incorporado, ainda que parcial',
+                'Livro Diário, ou os Balancetes Diários, e o Livro Razão (se houver), que demonstre o lançamento específico da incorporação',
+                'Protocolo e justificação de fusão, incorporação ou cisão, Atas de aprovação nas sociedades envolvidas e comprovação de arquivamento',
+                'Balanços e DRE, ECD/ECF/DEFIS, razão analítica ou relatório gerencial que separe receitas imobiliárias (compra e venda de imóveis, locação, arrendamento mercantil) das demais (De 2 anos anteriores e 2 anos posteriores à aquisição)',
+                'Quando se tratar de PJ que iniciar suas atividades após a aquisição do imóvel, ou menos de 2 anos antes dela, trazer documentos contábeis dos três primeiros anos',
+                'Termo de compromisso de apresentar, demonstrações dos 2 exercícios subsequentes ao fato gerador para aferição da preponderância',
+                'Tarifa de abertura de processo'
+            ],
+            'incorporacao_capital': [
+                'Requerimento específico, assinado pelo representante legal com e-mail/telefone',
+                'Procuração e documentos de identificação do representante, quando feito por terceiros',
+                'CNPJ e comprovante de inscrição e situação cadastral da(s) pessoa(s) jurídica(s) envolvida(s)',
+                'Contrato/Estatuto Social consolidado e últimas alterações arquivadas na Junta Comercial/Cartório (todas as partes envolvidas)',
+                'Prova do arquivamento/registro dos atos societários pertinentes à operação (protocolo ou certidão simplificada/inteiro teor)',
+                'Certidão de inteiro teor da matrícula atualizada do imóvel, com ônus e ações do Cartório de Registro de Imóveis',
+                'Certidão negativa de tributos imobiliários, no caso de imóvel urbano',
+                'Declaração do ITR, no caso de imóvel rural',
+                'Laudo de avaliação do imóvel, emitido por profissional engenheiro habilitado',
+                'Balanço patrimonial que demonstre o imóvel já incorporado, ainda que parcial',
+                'Livro Diário, ou os Balancetes Diários, e o Livro Razão (se houver), que demonstre o lançamento específico da incorporação',
+                'Tarifa de abertura de processo'
+            ]
+        };
+
+        // Função para criar item de documento com link especial para tarifa
+        function criarItemDocumento(doc) {
+            const li = document.createElement('li');
+            if (doc.includes('Tarifa de abertura de processo')) {
+                li.innerHTML = 'Tarifa de abertura de processo <a href="https://gpi-trb.portovelho.ro.gov.br/ServerExec/acessoBase/?idPortal=dbde30ec-cf59-4803-9653-00121a704021" target="_blank" style="color: #3498db; text-decoration: none;">🔗</a>';
+            } else {
+                li.textContent = doc;
+            }
+            return li;
+        }
+
+        function showDocumentation() {
+            const tipoSelecionado = document.getElementById('tipoRequerimento').value;
+            const docsSection = document.getElementById('documentacao');
+            const docsList = document.getElementById('docsList');
+
+            if (tipoSelecionado && documentacaoPorTipo[tipoSelecionado]) {
+                // Mostrar seção de documentação
+                docsSection.classList.add('active');
+                
+                // Limpar lista atual
+                docsList.innerHTML = '';
+                
+                // Adicionar documentos específicos
+                documentacaoPorTipo[tipoSelecionado].forEach(doc => {
+                    const li = criarItemDocumento(doc);
+                    docsList.appendChild(li);
+                });
+            } else {
+                docsSection.classList.remove('active');
+            }
+        }
+
+        function limparFormulario() {
+            if (confirm('Tem certeza que deseja limpar todos os campos do formulário?')) {
+                document.getElementById('itbiForm').reset();
+                document.getElementById('documentacao').classList.remove('active');
+            }
+        }
+
+        function gerarPDF() {
+            // Validar campos obrigatórios
+            const camposObrigatorios = document.querySelectorAll('[required]');
+            let todosPreenchidos = true;
+
+            camposObrigatorios.forEach(campo => {
+                if (campo.type === 'radio') {
+                    const radioGroup = document.querySelectorAll(`input[name="${campo.name}"]`);
+                    const checked = Array.from(radioGroup).some(r => r.checked);
+                    if (!checked) {
+                        radioGroup.forEach(r => r.parentElement.style.color = '#e74c3c');
+                        todosPreenchidos = false;
+                    } else {
+                        radioGroup.forEach(r => r.parentElement.style.color = '');
+                    }
+                } else if (!campo.value.trim()) {
+                    campo.style.borderColor = '#e74c3c';
+                    todosPreenchidos = false;
+                } else {
+                    campo.style.borderColor = '#ddd';
+                }
+            });
+
+            if (!todosPreenchidos) {
+                alert('Por favor, preencha todos os campos obrigatórios marcados com (*)');
+                return;
+            }
+
+            // Coletar dados do formulário
+            const selectedOption = document.getElementById('tipoRequerimento');
+            const tipoRequerimento = 'Art. 156, § 2º, I, da CF88 - ' + selectedOption.options[selectedOption.selectedIndex].text;
+            const nome = document.getElementById('nome').value;
+            const cpfCnpj = document.getElementById('cpfCnpj').value;
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
+            const endereco = document.getElementById('endereco').value;
+            const numero = document.getElementById('numero').value;
+            const bairro = document.getElementById('bairro').value;
+            const cep = document.getElementById('cep').value;
+            const complemento = document.getElementById('complemento').value;
+            const tipoImovel = document.querySelector('input[name="tipo_imovel"]:checked').value;
+            const inscricao = document.getElementById('inscricao').value;
+            const informacoes = document.getElementById('informacoes').value;
+            const dataCompleta = document.getElementById('dataCompleta').value;
+            const nomeAssinatura = document.getElementById('nomeAssinatura').value;
+            const cpfAssinatura = document.getElementById('cpfAssinatura').value;
+
+            // Gerar PDF usando jsPDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const pageWidth = doc.internal.pageSize.width - 40; // Largura útil (margens de 20mm cada lado)
+            let currentY = 20;
+
+            // Cabeçalho
+            doc.setFontSize(16);
+            doc.text('PREFEITURA DO MUNICÍPIO DE PORTO VELHO', 105, currentY, { align: 'center' });
+            currentY += 10;
+            doc.setFontSize(14);
+            doc.text('SECRETARIA EXECUTIVA DA RECEITA MUNICIPAL', 105, currentY, { align: 'center' });
+            currentY += 10;
+            doc.setFontSize(12);
+            doc.text('REQUERIMENTO PARA NÃO INCIDÊNCIA DE ITBI', 105, currentY, { align: 'center' });
+            currentY += 20;
+
+            // Introdução
+            doc.setFontSize(10);
+            const introLines = doc.splitTextToSize('Ilmo. Sr. (a) Secretário (a) da Receita Municipal, trata-se de:', pageWidth);
+            doc.text(introLines, 20, currentY);
+            currentY += introLines.length * 5;
+
+            // Tipo de Requerimento
+            const tipoLines = doc.splitTextToSize(`Tipo de Requerimento: ${tipoRequerimento}`, pageWidth);
+            doc.text(tipoLines, 20, currentY);
+            currentY += tipoLines.length * 5 + 10;
+
+            // Identificação do Requerente
+            doc.setFontSize(12);
+            doc.text('1. Identificação do Sujeito Passivo/Requerente', 20, currentY);
+            currentY += 10;
+            doc.setFontSize(10);
+            const nomeLines = doc.splitTextToSize(`Nome/Razão Social: ${nome}`, pageWidth);
+            doc.text(nomeLines, 20, currentY);
+            currentY += nomeLines.length * 5;
+            const cpfLines = doc.splitTextToSize(`CPF/CNPJ: ${cpfCnpj}`, pageWidth);
+            doc.text(cpfLines, 20, currentY);
+            currentY += cpfLines.length * 5;
+            const telLines = doc.splitTextToSize(`Telefone/Celular: ${telefone}`, pageWidth);
+            doc.text(telLines, 20, currentY);
+            currentY += telLines.length * 5;
+            const emailLines = doc.splitTextToSize(`E-mail: ${email}`, pageWidth);
+            doc.text(emailLines, 20, currentY);
+            currentY += emailLines.length * 5;
+            const fullAddress = `Endereço: ${endereco}, Nº ${numero}, Bairro: ${bairro}, CEP: ${cep}${complemento ? ', Complemento: ' + complemento : ''}`;
+            const addressLines = doc.splitTextToSize(fullAddress, pageWidth);
+            doc.text(addressLines, 20, currentY);
+            currentY += addressLines.length * 5 + 10;
+
+            // Identificação do Imóvel
+            doc.setFontSize(12);
+            doc.text('2. Identificação do Imóvel', 20, currentY);
+            currentY += 10;
+            doc.setFontSize(10);
+            const tipoImovelLines = doc.splitTextToSize(`Tipo de Imóvel: ${tipoImovel}`, pageWidth);
+            doc.text(tipoImovelLines, 20, currentY);
+            currentY += tipoImovelLines.length * 5;
+            const inscricaoLines = doc.splitTextToSize(`Inscrição: ${inscricao || 'Não informada'}`, pageWidth);
+            doc.text(inscricaoLines, 20, currentY);
+            currentY += inscricaoLines.length * 5 + 10;
+
+            // Informações Adicionais
+            doc.setFontSize(12);
+            doc.text('3. Informações Adicionais', 20, currentY);
+            currentY += 10;
+            doc.setFontSize(10);
+            const informacoesLines = doc.splitTextToSize(informacoes, pageWidth);
+            doc.text(informacoesLines, 20, currentY);
+            currentY += informacoesLines.length * 5 + 10;
+
+            // Data e Assinatura
+            const dataLines = doc.splitTextToSize(`Data do Requerimento: ${dataCompleta}`, pageWidth);
+            doc.text(dataLines, 20, currentY);
+            currentY += dataLines.length * 5;
+            const nomeAssLines = doc.splitTextToSize(`Nome do Contribuinte ou Representante Legal: ${nomeAssinatura}`, pageWidth);
+            doc.text(nomeAssLines, 20, currentY);
+            currentY += nomeAssLines.length * 5;
+            const cpfAssLines = doc.splitTextToSize(`CPF: ${cpfAssinatura}`, pageWidth);
+            doc.text(cpfAssLines, 20, currentY);
+            currentY += cpfAssLines.length * 5;
+            doc.text('Assinatura Digital: [Espaço para Assinatura]', 20, currentY);
+
+            // Salvar PDF
+            doc.save('Requerimento_ITBI.pdf');
+        }
+
+        // Auto-preencher data atual no formato DD/MM/AAAA
+        window.onload = function() {
+            const hoje = new Date();
+            const dia = String(hoje.getDate()).padStart(2, '0');
+            const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+            const ano = hoje.getFullYear();
+            document.getElementById('dataCompleta').value = `${dia}/${mes}/${ano}`;
+        };
+
+        // Formatação automática de CPF/CNPJ
+        document.getElementById('cpfCnpj').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            } else {
+                value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+            }
+            e.target.value = value;
+        });
+
+        // Formatação automática de CEP
+        document.getElementById('cep').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/(\d{5})(\d{3})/, '$1-$2');
+            e.target.value = value;
+        });
+
+        // Formatação automática de telefone
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            e.target.value = value;
+        });
+
+        // Formatação automática de CPF da assinatura
+        document.getElementById('cpfAssinatura').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
