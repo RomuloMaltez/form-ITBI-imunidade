@@ -23,17 +23,21 @@ export default function IdentificacaoRequerente() {
       .replace(/^(\d{2})(\d)/, "$1.$2")
       .replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
       .replace(/\.(\d{3})(\d)/, ".$1/$2")
-      .replace(/(\d{4})(\d)/, "$1-$2");
+      .replace(/(\d{4})(\d)/, "$1-$2")
+      .slice(0, 18);
   }
 
   function formatTelefone(value: string) {
     const numbers = value.replace(/\D/g, "");
-    return numbers.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+    if (numbers.length === 10) {
+      return numbers.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
+    }
+    return numbers.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3").slice(0, 15);
   }
 
   function formatCep(value: string) {
     const numbers = value.replace(/\D/g, "");
-    return numbers.replace(/(\d{5})(\d{3})/, "$1-$2");
+    return numbers.replace(/(\d{5})(\d{3})/, "$1-$2").slice(0, 9);
   }
 
   return (
@@ -111,7 +115,7 @@ export default function IdentificacaoRequerente() {
 
           <div className="flex-1 min-w-62.5">
             <label className="block font-semibold mb-1">
-              logradouro E-mail <span className="text-red-500">*</span>
+              E-mail <span className="text-red-500">*</span>
             </label>
             <input
               type="email"

@@ -17,8 +17,16 @@ import DataAssinatura from "@/components/Formulario/DataAssinatura";
 
 const schema = z.object({
   nome: z.string().min(3, "Nome obrigatório"),
-  cpfCnpj: z.string().min(14, "CPF/CNPJ inválido"),
-  telefone: z.string().min(14, "Telefone inválido"),
+  cpfCnpj: z.string().refine((value) => {
+    const numbers = value.replace(/\D/g, "");
+
+    return numbers.length === 11 || numbers.length === 14;
+  }, "Digite um CPF ou CNPJ completo"),
+  telefone: z.string().refine((value) => {
+    const numbers = value.replace(/\D/g, "");
+
+    return numbers.length === 10 || numbers.length === 11;
+  }, "Digite corretamente o telefone"),
   email: z.string().email("E-mail inválido"),
   endereco: z.string().min(3, "Endereço obrigatório"),
   numero: z.string().min(1, "Número obrigatório"),
@@ -29,7 +37,7 @@ const schema = z.object({
   informacoes: z.string().min(10, "Descreva pelo menos 10 caracteres"),
   dataCompleta: z.string(),
   nomeAssinatura: z.string().min(3, "Nome obrigatório"),
-  cpfAssinatura: z.string().min(14, "CPF inválido"),
+  cpfAssinatura: z.string().min(14, "CPF inválido").max(14, "CPF inválido"),
   tipo_imovel: z
     .string()
     .min(1, "Selecione o tipo do imóvel")
