@@ -35,7 +35,7 @@ export default function DataAssinatura() {
         <input
           {...register("dataCompleta")}
           readOnly
-          className="border-2 border-gray-300 bg-gray-100 rounded p-2 font-semibold"
+          className="border border-gray-300 bg-gray-100 rounded p-2 font-semibold"
         />
       </div>
 
@@ -49,7 +49,7 @@ export default function DataAssinatura() {
 
           <input
             {...register("nomeAssinatura")}
-            className={`w-full border-2 rounded p-2 ${
+            className={`w-full border rounded p-2 ${
               errors.nomeAssinatura ? "border-red-500" : "border-gray-400"
             }`}
           />
@@ -75,7 +75,7 @@ export default function DataAssinatura() {
               })
             }
             placeholder="000.000.000-00"
-            className={`w-full border-2 rounded p-2 ${
+            className={`w-full border rounded p-2 ${
               errors.cpfAssinatura ? "border-red-500" : "border-gray-400"
             }`}
           />

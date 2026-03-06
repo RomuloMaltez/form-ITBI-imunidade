@@ -14,7 +14,7 @@ export default function IdentificacaoRequerente() {
 
     if (numbers.length <= 11) {
       return numbers
-        .replace(/(\d{3})(\d)/, "$1setValue.$2")
+        .replace(/(\d{3})(\d)/, "$1.$2")
         .replace(/(\d{3})(\d)/, "$1.$2")
         .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     }
@@ -51,7 +51,7 @@ export default function IdentificacaoRequerente() {
             </label>
             <input
               {...register("nome")}
-              className={`w-full border-2 rounded p-2 ${
+              className={`w-full border rounded p-2 ${
                 errors.nome ? "border-red-500" : "border-gray-400"
               }`}
             />
@@ -72,7 +72,7 @@ export default function IdentificacaoRequerente() {
                 const formated = formatCpfCnpj(e.target.value);
                 setValue("cpfCnpj", formated, { shouldValidate: true });
               }}
-              className={`w-full border-2 rounded p-2 ${
+              className={`w-full border rounded p-2 ${
                 errors.cpfCnpj ? "border-red-500" : "border-gray-400"
               }`}
               placeholder="000.000.000-00 ou 00.000.000/0000-00"
@@ -93,7 +93,7 @@ export default function IdentificacaoRequerente() {
             </label>
             <input
               {...register("telefone")}
-              className={`w-full border-2 rounded p-2 ${
+              className={`w-full border rounded p-2 ${
                 errors.telefone ? "border-red-500" : "border-gray-400"
               }`}
               onChange={(e) => {
@@ -116,7 +116,7 @@ export default function IdentificacaoRequerente() {
             <input
               type="email"
               {...register("email")}
-              className={`w-full border-2 rounded p-2 ${
+              className={`w-full border rounded p-2 ${
                 errors.email ? "border-red-500" : "border-gray-400"
               }`}
             />
@@ -135,7 +135,7 @@ export default function IdentificacaoRequerente() {
           </label>
           <input
             {...register("endereco")}
-            className={`w-full border-2 rounded p-2 ${
+            className={`w-full border rounded p-2 ${
               errors.endereco ? "border-red-500" : "border-gray-400"
             }`}
           />
@@ -154,7 +154,7 @@ export default function IdentificacaoRequerente() {
             </label>
             <input
               {...register("numero")}
-              className={`w-full border-2 rounded p-2  ${
+              className={`w-full border rounded p-2  ${
                 errors.numero ? "border-red-500" : "border-gray-400"
               }`}
             />
@@ -171,7 +171,7 @@ export default function IdentificacaoRequerente() {
             </label>
             <input
               {...register("bairro")}
-              className={`w-full border-2 rounded p-2 ${
+              className={`w-full border rounded p-2 ${
                 errors.bairro ? "border-red-500" : "border-gray-400"
               }`}
             />
@@ -195,7 +195,7 @@ export default function IdentificacaoRequerente() {
                 const formated = formatCep(e.target.value);
                 setValue("cep", formated, { shouldValidate: true });
               }}
-              className={`w-full border-2 rounded p-2 ${
+              className={`w-full border rounded p-2 ${
                 errors.cep ? "border-red-500" : "border-gray-400"
               }`}
               placeholder="00000-000"
@@ -211,7 +211,7 @@ export default function IdentificacaoRequerente() {
             <label className="block font-semibold mb-1">Complemento</label>
             <input
               {...register("complemento")}
-              className="w-full border-2 rounded p-2 border-gray-400"
+              className="w-full border rounded p-2 border-gray-400"
             />
           </div>
         </div>

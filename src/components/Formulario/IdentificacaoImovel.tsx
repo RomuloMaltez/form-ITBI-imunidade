@@ -42,7 +42,7 @@ export default function IdentificacaoImovel() {
         <input
           type="text"
           placeholder="número da inscrição"
-          className={`w-full border-2 rounded-md p-3 focus:outline-none transition-colors ${
+          className={`w-full border rounded-md p-3 focus:outline-none transition-colors ${
             errors.inscricao
               ? "border-red-500 bg-red-50"
               : "border-gray-300 focus:border-[#3498db]"

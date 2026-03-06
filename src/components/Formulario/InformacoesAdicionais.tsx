@@ -23,7 +23,7 @@ export default function InformacoesAdicionais() {
         <textarea
           {...register("informacoes")}
           rows={5}
-          className={`w-full border-2 rounded p-3 resize-none ${
+          className={`w-full border rounded p-3 resize-none ${
             errors.informacoes ? "border-red-500" : "border-gray-400"
           }`}
           placeholder="Digite aqui informações adicionais que possam auxiliar na análise..."
