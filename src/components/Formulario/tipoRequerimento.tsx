@@ -173,9 +173,12 @@ export default function TipoRequerimento() {
             legível para a abertura do processo pelo DTEL. Caso o DTEL esteja
             indisponível, envie um <span className="font-bold">EMAIL</span>{" "}
             para:{" "}
-            <span className="font-semibold underline">
+            <a
+              className="font-semibold underline break-all hover:text-blue-900"
+              href="mailto:protocolo.semfaz@portovelho.ro.gov.br"
+            >
               protocolo.semfaz@portovelho.ro.gov.br
-            </span>
+            </a>
           </div>
 
           <ul className="space-y-2">
