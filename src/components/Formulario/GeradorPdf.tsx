@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: "#000",
     width: 250,
-    marginTop: 40,
+    marginTop: 60,
   },
 
   // --- Novo Rodapé Centralizado ---
