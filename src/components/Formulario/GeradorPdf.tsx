@@ -137,10 +137,7 @@ export const MyPdfDocument = ({ data }: { data: FormData }) => {
             PREFEITURA MUNICIPAL DE PORTO VELHO
           </Text>
           <Text style={styles.headerSubtitle}>
-            SECRETARIA MUNICIPAL DE FAZENDA
-          </Text>
-          <Text style={styles.headerCaption}>
-            Subsecretaria da Receita Municipal
+            SECRETARIA MUNICIPAL DE ECONOMIA
           </Text>
         </View>
 
@@ -150,7 +147,7 @@ export const MyPdfDocument = ({ data }: { data: FormData }) => {
           </Text>
 
           <Text style={{ fontSize: 10, marginBottom: 12 }}>
-            Ilmo. (a) Sr. (a) Secretário (a) Municipal de Fazenda, requeremos o
+            Ilmo. (a) Sr. (a) Secretário (a) Municipal de Economia, requeremos o
             acesso ao seguinte sistema:
             {"\n"}
             Tipo de Requerimento: Art. 156, § 2º, I, da CF88 -{" "}
