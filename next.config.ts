@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "/semec/form-itbi-imunidade",
+  assetPrefix: "/semec/form-itbi-imunidade",
   images: {
     unoptimized: true,
   },
