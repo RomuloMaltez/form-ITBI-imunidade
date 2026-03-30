@@ -217,7 +217,7 @@ export const MyPdfDocument = ({ data }: { data: FormData }) => {
 
           <View style={styles.footerCenterGroup}>
             <Text style={styles.footerNoteCentral}>
-              Instrução Normativa n.º 002/2024/GAB/SEMFAZ
+              Instrução Normativa n.º 002/2024/GAB/SEMEC
             </Text>
             <Text style={styles.footerNoteCentral}>
               Documento gerado eletronicamente em {dataGeracao}
