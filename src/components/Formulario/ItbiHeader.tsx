@@ -6,7 +6,7 @@ export default function ItbiHeader() {
       </h2>
 
       <p className="text-pv-gray-700 mb-6">
-        Ilmo. (a) Sr. (a) Secretário (a) Municipal de Fazenda, requeremos o
+        Ilmo. (a) Sr. (a) Secretário (a) Municipal da Economia, requeremos o
         acesso ao seguinte sistema:
       </p>
     </div>
