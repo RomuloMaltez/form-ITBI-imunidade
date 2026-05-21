@@ -166,6 +166,10 @@ export const MyPdfDocument = ({ data }: { data: FormData }) => {
               <Text>{data.telefone}</Text>
             </View>
             <View style={styles.fieldRow}>
+              <Text style={styles.fieldLabel}>E-mail:</Text>
+              <Text style={styles.fieldValue}>{data.email}</Text>
+            </View>
+            <View style={styles.fieldRow}>
               <Text style={styles.fieldLabel}>Endereço:</Text>
               <Text style={styles.fieldValue}>
                 {data.endereco}, Nº {data.numero}, Bairro: {data.bairro}
